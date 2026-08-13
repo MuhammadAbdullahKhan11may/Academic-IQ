@@ -1,0 +1,54 @@
+// AcademicIQ database schema
+// Every "Evaluate My Performance" click saves one AnalysisRecord with its Courses.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id        Int      @id @default(autoincrement())
+  fullName  String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+
+model AnalysisRecord {
+  id                  Int      @id @default(autoincrement())
+
+  // profile inputs
+  currentCGPA         Float
+  completedCredits    Float
+  targetCGPA          Float
+  nextSemesterCredits Float
+
+  // backend-calculated results (never AI-generated)
+  requiredSGPA        Float?
+  exceedsScale        Boolean  @default(false)
+  projectedCGPA       Float
+
+  // AI-generated content, stored as JSON text
+  aiSummary            String?
+  aiRecommendationsJson String?  // JSON.stringify(string[])
+  aiWeakCoursesJson     String?  // JSON.stringify([{course, priority, reason}])
+  aiStrongCoursesJson   String?  // JSON.stringify(string[])
+
+  createdAt           DateTime @default(now())
+
+  courses              Course[]
+}
+
+model Course {
+  id               Int             @id @default(autoincrement())
+  name             String
+  gpa              Float
+  credits          Int
+
+  analysisRecord   AnalysisRecord  @relation(fields: [analysisRecordId], references: [id], onDelete: Cascade)
+  analysisRecordId Int
+}

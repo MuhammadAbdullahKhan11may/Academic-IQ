@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AcademicIQ — AI-Powered Academic Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Homepage.css">
+</head>
+<body>
+
+  <div class="aiq-wrap">
+    <nav class="aiq-nav">
+    <div class="aiq-logo">
+      <div class="aiq-logo-icon">AI</div>
+      Academic<span>IQ</span>
+    </div>
+    <div class="aiq-user-menu">
+      <span class="aiq-user-name" id="aiq-user-name"></span>
+      <button class="aiq-logout-btn" id="aiq-logout-btn">Log Out</button>
+    </div>
+  </nav>
+
+  <section class="aiq-hero">
+    <div class="aiq-badge">✦ AI-Powered Academic Intelligence</div>
+    <h1>Understand Your Performance.<br>Plan Your Next Semester.</h1>
+    <p>Analyze your academic performance, discover where you need improvement, and find the SGPA you need to reach your academic goals.</p>
+  </section>
+
+  <div class="aiq-main">
+
+    <div class="aiq-left">
+
+      <div class="aiq-card">
+        <div class="aiq-card-head">
+          <div class="aiq-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></svg>
+          </div>
+          <div>
+            <h3>Your Academic Profile</h3>
+            <p>Enter your current academic standing and your target.</p>
+          </div>
+          <svg class="aiq-info-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+        </div>
+
+        <div class="aiq-grid2">
+          <div class="aiq-field">
+            <label>Current CGPA</label>
+            <div class="aiq-input-wrap"><input type="number" step="0.01" min="0" max="4" value="3.65" class="aiq-cgpa-input"><span>/ 4.0</span></div>
+            <div class="aiq-hint">Your cumulative GPA so far.</div>
+          </div>
+          <div class="aiq-field">
+            <label>Completed Credit Hours</label>
+            <div class="aiq-input-wrap"><input type="number" min="0" max="100" value="53" class="aiq-credit-input"><span>hrs</span></div>
+            <div class="aiq-hint">Total credit hours you've earned.</div>
+          </div>
+          <div class="aiq-field">
+            <label>Target CGPA</label>
+            <div class="aiq-input-wrap"><input type="number" step="0.01" min="0" max="4" value="3.80" class="aiq-cgpa-input"><span>/ 4.0</span></div>
+            <div class="aiq-hint">The CGPA you're aiming for.</div>
+          </div>
+          <div class="aiq-field">
+            <label>Next Semester Credit Hours</label>
+            <div class="aiq-input-wrap"><input type="number" min="0" max="100" value="17" class="aiq-credit-input"><span>hrs</span></div>
+            <div class="aiq-hint">Credits you'll take next term.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="aiq-card">
+        <div class="aiq-card-head">
+          <div class="aiq-card-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+          </div>
+          <div>
+            <h3>Course Performance</h3>
+            <p>Add your courses and tell us how you performed.</p>
+          </div>
+        </div>
+
+        <div id="aiq-course-list">
+          <div class="aiq-course">
+            <div class="aiq-course-top">
+              <span class="aiq-course-num"><em>01</em> COURSE</span>
+              <button class="aiq-trash" onclick="this.closest('.aiq-course').remove()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6"/></svg>
+              </button>
+            </div>
+            <div class="aiq-course-fields">
+              <div><label>Course Name</label><input type="text" value="Data Structures"></div>
+              <div><label>Obtained GPA</label><input type="number" step="0.01" value="2.40" class="aiq-course-gpa-input"></div>
+<div><label>Credits</label><input type="number" value="3" class="aiq-course-credit-input"></div>
+            </div>
+          </div>
+
+          <div class="aiq-course">
+            <div class="aiq-course-top">
+              <span class="aiq-course-num"><em>02</em> COURSE</span>
+              <button class="aiq-trash" onclick="this.closest('.aiq-course').remove()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0l-1 14a2 2 0 01-2 2H7a2 2 0 01-2-2L4 6"/></svg>
+              </button>
+            </div>
+            <div class="aiq-course-fields">
+              <div><label>Course Name</label><input type="text" value="Calculus"></div>
+              <div><label>Obtained GPA</label><input type="number" step="0.01" value="2.10" class="aiq-course-gpa-input"></div>
+<div><label>Credits</label><input type="number" value="3" class="aiq-course-credit-input"></div>
+            </div>
+          </div>
+        </div>
+
+        <button class="aiq-add-course" id="aiq-add-course-btn">+ Add Course</button>
+      </div>
+
+    <div class="aiq-card" style="padding:24px;">
+        <button class="aiq-evaluate-btn">Evaluate My Performance →</button>
+        <div class="aiq-evaluate-note">Your academic data is analyzed to identify improvement areas and calculate your target.</div>
+        <button class="aiq-reset-btn" id="aiq-reset-btn">Reset Everything</button>
+      </div>
+
+     
+
+    </div>
+
+    <div class="aiq-right">
+  <div class="aiq-results" id="aiq-empty-state">
+    <div class="aiq-results-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-4 4"/></svg>
+    </div>
+    <h4>Your academic insights will appear here.</h4>
+    <p>Add your courses and click <strong>Evaluate My Performance</strong> to generate your analysis.</p>
+    <div class="aiq-dots"><span></span><span></span><span></span></div>
+  </div>
+
+  <div class="aiq-results-panel" id="aiq-results-panel" style="display:none;">
+
+    <div class="aiq-results-header">
+      <span class="aiq-eyebrow">RESULTS</span>
+      <h2>Your Academic Analysis</h2>
+      <p>Here's what your current performance tells us.</p>
+    </div>
+
+    <div class="aiq-stat-grid" id="aiq-stat-grid"></div>
+
+    <div class="aiq-warning-banner" id="aiq-warning-banner" style="display:none;"></div>
+
+    <div class="aiq-sub-grid">
+      <div class="aiq-card aiq-weak-card">
+        <div class="aiq-card-head">
+          <div class="aiq-card-icon aiq-icon-warn">⚠</div>
+          <div>
+            <h3>Areas That Need Improvement</h3>
+            <p>Courses ranked by how much they're holding back your CGPA.</p>
+          </div>
+        </div>
+        <div id="aiq-weak-list"></div>
+      </div>
+
+      <div class="aiq-card aiq-strong-card">
+        <div class="aiq-card-head">
+          <div class="aiq-card-icon aiq-icon-strong">↗</div>
+          <div>
+            <h3>Your Strongest Areas</h3>
+            <p>Keep the momentum in these courses.</p>
+          </div>
+        </div>
+        <div id="aiq-strong-list"></div>
+      </div>
+    </div>
+
+    <div class="aiq-sub-grid">
+      <div class="aiq-card">
+        <div class="aiq-card-head">
+          <div class="aiq-card-icon">📊</div>
+          <div>
+            <h3>Performance Overview</h3>
+            <p>Your GPA across every course this term.</p>
+          </div>
+        </div>
+        <div id="aiq-overview-list"></div>
+      </div>
+
+      <div class="aiq-card">
+        <div class="aiq-card-head">
+          <div class="aiq-card-icon">🚩</div>
+          <div>
+            <h3>CGPA Goal</h3>
+            <p>From where you are to where you want to be.</p>
+          </div>
+        </div>
+        <div class="aiq-goal-track" id="aiq-goal-track"></div>
+        <div class="aiq-goal-values" id="aiq-goal-values"></div>
+      </div>
+    </div>
+
+    <div class="aiq-card aiq-advisor-card" id="aiq-advisor-card">
+      <div class="aiq-card-head">
+        <div class="aiq-card-icon aiq-icon-advisor">✨</div>
+        <div>
+          <h3>AI Academic Advisor <span class="aiq-beta-badge">BETA</span></h3>
+          <p>Based on your academic performance, here's where you should focus.</p>
+        </div>
+      </div>
+
+      <div id="aiq-advisor-loading" class="aiq-advisor-loading" style="display:none;">
+        <div class="aiq-advisor-spinner"></div>
+        <span>Generating your personalized analysis...</span>
+      </div>
+
+      <div id="aiq-advisor-error" class="aiq-advisor-error" style="display:none;"></div>
+
+      <div id="aiq-advisor-empty" class="aiq-advisor-empty" style="display:none;">
+        Not enough data to generate advice yet.
+      </div>
+
+      <div id="aiq-advisor-content" style="display:none;">
+        <p class="aiq-advisor-summary" id="aiq-advisor-summary"></p>
+
+        <div class="aiq-advisor-priorities-label" id="aiq-advisor-priorities-label" style="display:none;">TOP PRIORITIES</div>
+        <div class="aiq-priority-grid" id="aiq-priority-grid"></div>
+
+        <div class="aiq-advisor-recommendations" id="aiq-advisor-recommendations"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+  </div>
+
+<div class="aiq-bottom-grid">
+
+  <div class="aiq-bottom-col">
+    <div class="aiq-card aiq-marksheet-card">
+      <div class="aiq-marksheet-row">
+        <div class="aiq-card-icon">⊹</div>
+        <div class="aiq-marksheet-text">
+          <div class="aiq-marksheet-title">Have a marksheet? <span class="aiq-beta-badge">AI-POWERED</span></div>
+          <p>Upload your marksheet and let AI extract your academic information automatically.</p>
+          <span class="aiq-marksheet-hint">Supported formats: PDF, JPG, PNG</span>
+        </div>
+        <button class="aiq-marksheet-upload-btn" id="aiq-marksheet-upload-btn">⭱ Upload Marksheet</button>
+      </div>
+      <input type="file" id="aiq-marksheet-input" accept=".pdf,.jpg,.jpeg,.png" style="display:none;">
+      <div id="aiq-marksheet-status" class="aiq-marksheet-status" style="display:none;"></div>
+    </div>
+  </div>
+
+  <div class="aiq-bottom-col">
+    <div class="aiq-card aiq-planner-card" id="aiq-planner-card">
+      <div class="aiq-card-head">
+        <div class="aiq-card-icon">🧪</div>
+        <div>
+          <span class="aiq-eyebrow">WHAT IF I ACHIEVE...</span>
+          <h3>Plan Your Academic Future</h3>
+          <p>Adjust the grades you expect and see the impact instantly.</p>
+        </div>
+      </div>
+
+      <div id="aiq-planner-empty" class="aiq-planner-empty">Add a course above to start planning.</div>
+
+      <div id="aiq-planner-body" style="display:none;">
+        <div class="aiq-planner-grid">
+          <div id="aiq-planner-course-list" class="aiq-planner-course-list"></div>
+
+          <div class="aiq-planner-projection">
+            <div class="aiq-planner-proj-row">
+              <div>
+                <div class="aiq-planner-proj-label">Projected SGPA</div>
+                <div class="aiq-planner-proj-value" id="aiq-planner-sgpa">--</div>
+              </div>
+              <div>
+                <div class="aiq-planner-proj-label">Projected CGPA</div>
+                <div class="aiq-planner-proj-value" id="aiq-planner-cgpa">--</div>
+              </div>
+            </div>
+            <button class="aiq-planner-explore-btn" id="aiq-planner-reset-btn">Explore Scenarios →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="aiq-modal-overlay" id="aiq-marksheet-review-overlay">
+  <div class="aiq-modal-box aiq-marksheet-review-box">
+    <h3 class="aiq-marksheet-review-title">Review Extracted Courses</h3>
+    <p class="aiq-marksheet-review-sub">Check and edit before adding these to your course list.</p>
+    <div id="aiq-marksheet-review-list" class="aiq-marksheet-review-list"></div>
+    <div class="aiq-marksheet-review-actions">
+      <button class="aiq-reset-btn" id="aiq-marksheet-cancel-btn" style="margin-top:0;">Cancel</button>
+      <button class="aiq-evaluate-btn" id="aiq-marksheet-confirm-btn" style="margin-top:0;">Add to Course List</button>
+    </div>
+  </div>
+</div>
+
+<div class="aiq-modal-overlay" id="aiq-modal-overlay">
+  <div class="aiq-modal-box">
+    <div class="aiq-modal-icon" id="aiq-modal-icon">!</div>
+    <p class="aiq-modal-message" id="aiq-modal-message"></p>
+    <button class="aiq-modal-ok" id="aiq-modal-ok">OK</button>
+  </div>
+</div>
+
+  <div class="aiq-footer">
+    <span>AcademicIQ — AI-powered academic intelligence.</span>
+    <span>Estimates are guidance only and may vary by institution.</span>
+  </div>
+
+  </div>
+
+  <script src="Homepage.js"></script>
+</body>
+</html>
+
